@@ -5,25 +5,26 @@
 
 module TypeLevel.NaturalNumber where
 
-data N0
-data Succ a
+data Zero
+data SuccessorTo a
 
-type N1  = Succ N0
-type N2  = Succ N1
-type N3  = Succ N2
-type N4  = Succ N3
-type N5  = Succ N4
-type N6  = Succ N5
-type N7  = Succ N6
-type N8  = Succ N7
-type N9  = Succ N8
-type N10 = Succ N9
-type N11 = Succ N10
-type N12 = Succ N11
-type N13 = Succ N12
-type N14 = Succ N13
-type N15 = Succ N14
-type N16 = Succ N15
+type N0  = Zero
+type N1  = SuccessorTo N0
+type N2  = SuccessorTo N1
+type N3  = SuccessorTo N2
+type N4  = SuccessorTo N3
+type N5  = SuccessorTo N4
+type N6  = SuccessorTo N5
+type N7  = SuccessorTo N6
+type N8  = SuccessorTo N7
+type N9  = SuccessorTo N8
+type N10 = SuccessorTo N9
+type N11 = SuccessorTo N10
+type N12 = SuccessorTo N11
+type N13 = SuccessorTo N12
+type N14 = SuccessorTo N13
+type N15 = SuccessorTo N14
+type N16 = SuccessorTo N15
 
 n0  :: N0  ; n0  = undefined
 n1  :: N1  ; n1  = undefined
@@ -42,21 +43,32 @@ n13 :: N13 ; n13  = undefined
 n14 :: N14 ; n14  = undefined
 n15 :: N15 ; n15  = undefined
 
-predNat :: Succ a -> a
-predNat _ = undefined
+predecessorOf :: SuccessorTo a -> a
+predecessorOf _ = undefined
 
-succNat :: a -> Succ a
-succNat _ = undefined
+successorTo :: a -> SuccessorTo a
+successorTo _ = undefined
 
-class Nat n where nat :: n -> Int
-instance Nat N0 where nat _ = 0
-instance Nat a => Nat (Succ a) where nat x = 1 + nat (predNat x)
+class NaturalNumber n where
+    naturalNumberAsInt :: n -> Int
+instance NaturalNumber Zero where
+    naturalNumberAsInt _ = 0
+instance NaturalNumber a => NaturalNumber (SuccessorTo a) where
+    naturalNumberAsInt x = 1 + naturalNumberAsInt (predecessorOf x)
 
-instance Show N0 where show _ = "0"
-instance Nat n => Show (Succ n) where show x = show (1 + nat x)
+instance Show Zero where
+    show _ = "0"
+instance NaturalNumber n => Show (SuccessorTo n) where
+    show = show . (+1) . naturalNumberAsInt . predecessorOf
 
-instance Eq N0 where (==) _ _ = True
-instance Nat n => Eq (Succ n) where (==) _ _ = True
+instance Eq Zero where
+    (==) _ _ = True
+    (/=) _ _ = False
+instance NaturalNumber n => Eq (SuccessorTo n) where
+    (==) _ _ = True
+    (/=) _ _ = False
 
-instance Ord N0 where compare _ _ = EQ
-instance Nat n => Ord (Succ n) where compare _ _ = EQ
+instance Ord Zero where
+    compare _ _ = EQ
+instance NaturalNumber n => Ord (SuccessorTo n) where
+    compare _ _ = EQ
