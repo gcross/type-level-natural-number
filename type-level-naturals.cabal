@@ -1,5 +1,5 @@
 Name:                type-level-natural-number
-Version:             1.0
+Version:             1.1
 License:             BSD3
 License-file:        LICENSE
 Author:              Gregory Crosswhite
@@ -25,6 +25,8 @@ Description:         This is a simple, Haskell 2010 compatible implementation
                      the excellent Vec package; I created this package
                      with the intent of making this functionality more
                      widely available.
+
+                     Difference from 1.0:  Added instances for Typeable.
 Cabal-version:       >=1.2.3
 Build-type:          Simple
 Category:	     Type System,Data
