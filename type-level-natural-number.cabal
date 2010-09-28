@@ -26,7 +26,8 @@ Description:         This is a simple, Haskell 2010 compatible implementation
                      with the intent of making this functionality more
                      widely available.
 
-                     Difference from 1.0:  Added instances for Typeable.
+                     Difference from 1.0:  Added instances for Typeable, and
+                     word synonyms for N0...N15.
 Cabal-version:       >=1.2.3
 Build-type:          Simple
 Category:	     Type System,Data
