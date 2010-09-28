@@ -6,7 +6,7 @@
 module TypeLevel.NaturalNumber where
 
 data Zero
-data SuccessorTo a
+data SuccessorTo n
 
 type N0  = Zero
 type N1  = SuccessorTo N0
@@ -58,17 +58,17 @@ n13 :: N13 ; n13  = undefined
 n14 :: N14 ; n14  = undefined
 n15 :: N15 ; n15  = undefined
 
-predecessorOf :: SuccessorTo a -> a
+predecessorOf :: SuccessorTo n -> n
 predecessorOf _ = undefined
 
-successorTo :: a -> SuccessorTo a
+successorTo :: n -> SuccessorTo n
 successorTo _ = undefined
 
 class NaturalNumber n where
     naturalNumberAsInt :: n -> Int
 instance NaturalNumber Zero where
     naturalNumberAsInt _ = 0
-instance NaturalNumber a => NaturalNumber (SuccessorTo a) where
+instance NaturalNumber n => NaturalNumber (SuccessorTo n) where
     naturalNumberAsInt x = 1 + naturalNumberAsInt (predecessorOf x)
 
 instance Show Zero where
