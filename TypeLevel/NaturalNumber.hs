@@ -25,6 +25,22 @@ type N13 = SuccessorTo N12
 type N14 = SuccessorTo N13
 type N15 = SuccessorTo N14
 
+type One      = N1
+type Two      = N2
+type Three    = N3
+type Four     = N4
+type Five     = N5
+type Six      = N6
+type Seven    = N7
+type Eight    = N8
+type Nine     = N9
+type Ten      = N10
+type Eleven   = N11
+type Twelve   = N12
+type Thirteen = N13
+type Fourteen = N14
+type Fifteen  = N15
+
 n0  :: N0  ; n0  = undefined
 n1  :: N1  ; n1  = undefined
 n2  :: N2  ; n2  = undefined
