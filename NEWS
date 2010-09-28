@@ -1,0 +1,10 @@
+Version 1.1
+===========
+
+*) Added instances for Typeable.
+*) Added author's name to the license.
+
+Version 1.0
+===========
+
+Initial release.

@@ -5,6 +5,8 @@
 
 module TypeLevel.NaturalNumber where
 
+import Data.Typeable
+
 data Zero
 data SuccessorTo n
 
@@ -87,3 +89,8 @@ instance Ord Zero where
     compare _ _ = EQ
 instance NaturalNumber n => Ord (SuccessorTo n) where
     compare _ _ = EQ
+
+instance Typeable Zero where
+    typeOf n = mkTyConApp (mkTyCon $ "N#0") []
+instance NaturalNumber n => Typeable (SuccessorTo n) where
+    typeOf n = mkTyConApp (mkTyCon $ "N#" ++ show (naturalNumberAsInt n + 1)) []
