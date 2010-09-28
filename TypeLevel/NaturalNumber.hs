@@ -24,7 +24,6 @@ type N12 = SuccessorTo N11
 type N13 = SuccessorTo N12
 type N14 = SuccessorTo N13
 type N15 = SuccessorTo N14
-type N16 = SuccessorTo N15
 
 n0  :: N0  ; n0  = undefined
 n1  :: N1  ; n1  = undefined
