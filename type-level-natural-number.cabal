@@ -14,20 +14,20 @@ Description:         This is a simple, Haskell 2010 compatible implementation
 		     The difference between this package and the many
                      others on Hackage implementing type-level
                      naturals is its emphasis on simplicity.  It only
-                     supports positive (and zero) natural numbers, and
-                     only the successor and predicessor operations.
-                     It represents natural numbers using a type-level
+                     supports non-negative natural numbers, and only
+                     the successor and predicessor operations.  It
+                     represents natural numbers using a type-level
                      linked list, so it is not intended to be used for
                      representing large numbers.  Pre-defined aliases
                      for natural numbers up to 15 are provided.
 
-                     The code for this package was largely taken from
-                     the excellent Vec package; I created this package
-                     with the intent of making this functionality more
-                     widely available.
-Cabal-version:       >=1.2.3
-Build-type:          Simple
-Category:	     Type System,Data
+                     The code for this package was largely inspired by
+                     the type-level natural numbers in the excellent
+                     Vec package.
+
+Cabal-version: >=1.6
+Build-type: Simple
+Category: Type System,Data
 
 Library
     Build-depends:   base >= 3 && < 5
