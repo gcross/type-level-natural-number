@@ -10,7 +10,7 @@ Description:         This is a simple, Haskell 2010 compatible implementation
                      of type-level natural numbers.  Operations requiring
                      non-Haskell 2010 language extensions have been split
                      into a separate package.
-
+		     .
 		     The difference between this package and the many
                      others on Hackage implementing type-level
                      naturals is its emphasis on simplicity.  It only
@@ -20,12 +20,12 @@ Description:         This is a simple, Haskell 2010 compatible implementation
                      linked list, so it is not intended to be used for
                      representing large numbers.  Pre-defined aliases
                      for natural numbers up to 15 are provided.
-
+		     .
                      The code for this package was largely taken from
                      the excellent Vec package; I created this package
                      with the intent of making this functionality more
                      widely available.
-
+		     .
                      Difference from 1.0:  Added instances for Typeable, and
                      word synonyms for N0...N15.
 Cabal-version:       >=1.2.3
