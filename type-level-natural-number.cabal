@@ -11,7 +11,7 @@ Description:         This is a simple, Haskell 2010 compatible implementation
                      non-Haskell 2010 language extensions have been split
                      into a separate package.
 		     .
-		     The difference between this package and the many
+                     The difference between this package and the many
                      others on Hackage implementing type-level
                      naturals is its emphasis on simplicity.  It only
                      supports non-negative natural numbers, and only
