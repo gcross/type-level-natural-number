@@ -85,7 +85,7 @@ instance NaturalNumber n => NaturalNumber (SuccessorTo n) where
 instance Show Zero where
     show _ = "0"
 instance NaturalNumber n => Show (SuccessorTo n) where
-    show = show . (+1) . naturalNumberAsInt . predecessorOf
+    show = show . naturalNumberAsInt
 
 instance Eq Zero where
     (==) _ _ = True
