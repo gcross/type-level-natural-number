@@ -1,3 +1,9 @@
+Version 1.1.1
+=============
+
+*) Performance enhancements for naturalNumberAsInt.
+*) Simplified Show implementation.
+
 Version 1.1
 ===========
 

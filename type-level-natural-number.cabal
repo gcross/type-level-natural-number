@@ -28,6 +28,9 @@ Description:         This is a simple, Haskell 2010 compatible implementation
 		     .
                      Difference from 1.0:  Added instances for Typeable, and
                      word synonyms for N0...N15.
+		     .
+                     Difference from 1.1:  Performance enhancements for
+                     naturalNumberAsInt.  Simplified Show implementation.
 Cabal-version:       >=1.6
 Build-type:          Simple
 Category:	     Type System,Data
