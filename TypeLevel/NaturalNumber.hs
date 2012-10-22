@@ -71,7 +71,16 @@ class NaturalNumber n where
 instance NaturalNumber Zero where
     naturalNumberAsInt _ = 0
 instance NaturalNumber n => NaturalNumber (SuccessorTo n) where
-    naturalNumberAsInt x = 1 + naturalNumberAsInt (predecessorOf x)
+    -- performance enhancing hoop jumping:
+    --   this convinces GHC that the function is constant
+    --   and so doesn't need to be recomputed every time
+    --   which gives a huge performance boost if used a lot
+    naturalNumberAsInt = self
+      where
+        self = const k
+        k = (1 +) $! naturalNumberAsInt (predecessorOf (undefined `asTypeIn` self))
+        asTypeIn :: a -> (a -> b) -> a
+        asTypeIn = const
 
 instance Show Zero where
     show _ = "0"
