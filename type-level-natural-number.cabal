@@ -3,7 +3,7 @@ Version:             2.0
 License:             BSD3
 License-file:        LICENSE
 Author:              Gregory Crosswhite
-Maintainer:          Gregory Crosswhite <gcross@phys.washington.edu>
+Maintainer:          Gregory Crosswhite <gcrosswhite@gmail.com>
 Stability:           Provisional
 Synopsis:            Simple type level natural numbers
 Description:         This is a simple implementation of type-level natural
