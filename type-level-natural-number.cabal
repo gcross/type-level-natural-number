@@ -1,15 +1,15 @@
 Name:                type-level-natural-number
-Version:             1.1.1
+Version:             2.0
 License:             BSD3
 License-file:        LICENSE
 Author:              Gregory Crosswhite
 Maintainer:          Gregory Crosswhite <gcross@phys.washington.edu>
 Stability:           Provisional
-Synopsis:            Simple, Haskell 2010-compatible type level natural numbers
-Description:         This is a simple, Haskell 2010 compatible implementation
-                     of type-level natural numbers.  Operations requiring
-                     non-Haskell 2010 language extensions have been split
-                     into a separate package.
+Synopsis:            Simple type level natural numbers
+Description:         This is a simple implementation of type-level natural
+                     numbers that only requires DeriveDataTypeable.  Operations
+                     requiring more language extensions have been split into a
+                     separate package.
 		     .
                      The difference between this package and the many
                      others on Hackage implementing type-level
@@ -31,6 +31,11 @@ Description:         This is a simple, Haskell 2010 compatible implementation
 		     .
                      Difference from 1.1:  Performance enhancements for
                      naturalNumberAsInt.  Simplified Show implementation.
+             .
+                     Difference from 1.1.1:  Gave up on Haskell 2010
+                     compatibility since as of GHC 7.8 manually deriving from
+                     Typeable is no longer allowed; now I use
+                     DeriveDataTypeable to construct the instances.
 Cabal-version:       >=1.6
 Build-type:          Simple
 Category:	     Type System,Data

@@ -1,14 +1,15 @@
 {- Copyright (c) 2008, Scott E. Dillard. All rights reserved. -}
 {- Copyright (c) 2010, Gregory M. Crosswhite. All rights reserved. -}
 
+{-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE EmptyDataDecls #-}
 
 module TypeLevel.NaturalNumber where
 
 import Data.Typeable
 
-data Zero
-data SuccessorTo n
+data Zero deriving Typeable
+data SuccessorTo n deriving Typeable
 
 type N0  = Zero
 type N1  = SuccessorTo N0
@@ -98,8 +99,3 @@ instance Ord Zero where
     compare _ _ = EQ
 instance NaturalNumber n => Ord (SuccessorTo n) where
     compare _ _ = EQ
-
-instance Typeable Zero where
-    typeOf n = mkTyConApp (mkTyCon $ "N#0") []
-instance NaturalNumber n => Typeable (SuccessorTo n) where
-    typeOf n = mkTyConApp (mkTyCon $ "N#" ++ show (naturalNumberAsInt n + 1)) []
